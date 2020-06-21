@@ -4,10 +4,16 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 require("dotenv/config");
 
+const countryRouter = require("./routes/country-router");
+
 const app = express();
 
 app.use(cors());
 app.use(bodyParser.json());
+
+// routers middleware
+app.use("/countries", countryRouter);
+
 
 app.get("/", (req, res) => {
     res.status(200).send(" ----  Address Microservice  ---- ");
