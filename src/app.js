@@ -6,6 +6,7 @@ require("dotenv/config");
 
 const countryRouter = require("./routes/country-router");
 const provinceRouter = require("./routes/province-router");
+const districtRouter = require("./routes/district-router");
 
 const app = express();
 
@@ -15,7 +16,7 @@ app.use(bodyParser.json());
 // routers middleware
 app.use("/countries", countryRouter);
 app.use("/provinces", provinceRouter);
-
+app.use("/districts", districtRouter);
 
 
 app.get("/", (req, res) => {
