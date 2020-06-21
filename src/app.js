@@ -5,6 +5,7 @@ const cors = require("cors");
 require("dotenv/config");
 
 const countryRouter = require("./routes/country-router");
+const provinceRouter = require("./routes/province-router");
 
 const app = express();
 
@@ -13,6 +14,8 @@ app.use(bodyParser.json());
 
 // routers middleware
 app.use("/countries", countryRouter);
+app.use("/provinces", provinceRouter);
+
 
 
 app.get("/", (req, res) => {
