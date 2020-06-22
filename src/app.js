@@ -28,10 +28,10 @@ app.use("", (req, res) => {
 })
 
 
-const localDBConnection = "mongodb://localhost/AddressDB";
-// const cloudDBConnection = process.env.DB_CONNECTION;
+//const localDBConnection = "mongodb://localhost/AddressDB";
+const cloudDBConnection = process.env.DB_CONNECTION;
 
-mongoose.connect(localDBConnection, {
+mongoose.connect(cloudDBConnection, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
