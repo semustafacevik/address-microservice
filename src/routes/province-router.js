@@ -1,5 +1,5 @@
 const express = require("express");
-const Province = require("../schemas/province");
+const Province = require("../models/province");
 
 const router = express.Router();
 

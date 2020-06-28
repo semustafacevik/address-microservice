@@ -20,18 +20,14 @@ app.use("/districts", districtRouter);
 
 
 app.get("/", (req, res) => {
-    res.status(200).send(" ----  Address Microservice  ---- ");
+    res.status(200).send("----  Address Microservice  ----");
 })
 
 app.use("", (req, res) => {
     res.status(404).send("Opps! 404 Not Found.");
 })
 
-
-//const localDBConnection = "mongodb://localhost/AddressDB";
-const cloudDBConnection = process.env.DB_CONNECTION;
-
-mongoose.connect(cloudDBConnection, {
+mongoose.connect(process.env.DB_CONNECTION, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,

@@ -1,5 +1,5 @@
 const express = require("express");
-const District = require("../schemas/district");
+const District = require("../models/district");
 
 const router = express.Router();
 

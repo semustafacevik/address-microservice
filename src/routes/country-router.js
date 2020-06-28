@@ -1,5 +1,5 @@
 const express = require("express");
-const Country = require("../schemas/country");
+const Country = require("../models/country");
 
 const router = express.Router();
 
