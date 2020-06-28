@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "//TODO: git repo"
+    "url": "https://github.com/semustafacevik/address-microservice"
   },
   "keywords": [
     "NodeJS",
@@ -18,7 +18,7 @@
     "MongoDB",
     "Microservice"
   ],
-  "author": "MustafaCEVIK",
+  "author": "@semustafacevik",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
