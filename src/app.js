@@ -18,30 +18,31 @@ app.use("/countries", countryRouter);
 app.use("/provinces", provinceRouter);
 app.use("/districts", districtRouter);
 
-
 app.get("/", (req, res) => {
-    res.status(200).send("----  Address Microservice  ----");
-})
+  res.status(200).send("----  Address Microservice  ----");
+});
 
 app.use("", (req, res) => {
-    res.status(404).send("Opps! 404 Not Found.");
-})
+  res.status(404).send("Opps! 404 Not Found.");
+});
 
-mongoose.connect(process.env.DB_CONNECTION, {
+mongoose.connect(
+  process.env.DB_CONNECTION,
+  {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
-    useFindAndModify: false
-}, (error) => {
+    useFindAndModify: false,
+  },
+  (error) => {
     if (error) {
-        console.log(error);
+      console.log(error);
+    } else {
+      console.log("Connected to DB.");
     }
-    else {
-        console.log("Connected to DB.");
-    }
-}
+  }
 );
 
 app.listen(process.env.PORT || 4040, () => {
-    console.log("App Started.");
-})
+  console.log("App Started.");
+});
