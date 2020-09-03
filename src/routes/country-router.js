@@ -7,7 +7,9 @@ const router = express.Router();
 router.get("/getall", async (req, res) => {
   try {
     const countries = await Country.find({});
-    res.status(200).send(countries);
+    res
+      .status(200)
+      .send(countries.sort((a, b) => a.name.localeCompare(b.name)));
   } catch (error) {
     res.status(500).send(error);
   }

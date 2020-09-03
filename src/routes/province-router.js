@@ -16,8 +16,10 @@ router.get("/getbyid/:provinceId", async (req, res) => {
 //* getbycountryid
 router.get("/getbycountryid/:countryId", async (req, res) => {
   try {
-    const province = await Province.find({ countryId: req.params.countryId });
-    res.status(200).send(province);
+    const provinces = await Province.find({ countryId: req.params.countryId });
+    res
+      .status(200)
+      .send(provinces.sort((a, b) => a.name.localeCompare(b.name)));
   } catch (error) {
     res.status(500).send(error);
   }

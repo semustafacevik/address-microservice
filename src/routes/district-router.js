@@ -16,8 +16,12 @@ router.get("/getbyid/:districtId", async (req, res) => {
 //* getbyprovinceid
 router.get("/getbyprovinceid/:provinceId", async (req, res) => {
   try {
-    const district = await District.find({ provinceId: req.params.provinceId });
-    res.status(200).send(district);
+    const districts = await District.find({
+      provinceId: req.params.provinceId,
+    });
+    res
+      .status(200)
+      .send(districts.sort((a, b) => a.name.localeCompare(b.name)));
   } catch (error) {
     res.status(500).send(error);
   }
