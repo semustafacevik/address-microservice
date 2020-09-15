@@ -3,8 +3,8 @@ const Country = require("../models/country");
 
 const router = express.Router();
 
-//* getall
-router.get("/getall", async (req, res) => {
+//* get all
+router.get("/", async (req, res) => {
   try {
     const countries = await Country.find({});
     res
@@ -15,8 +15,8 @@ router.get("/getall", async (req, res) => {
   }
 });
 
-//* getbyid
-router.get("/getbyid/:countryId", async (req, res) => {
+//* get by id
+router.get("/:countryId", async (req, res) => {
   try {
     const country = await Country.findById(req.params.countryId);
     res.status(200).send(country);

@@ -3,8 +3,8 @@ const District = require("../models/district");
 
 const router = express.Router();
 
-//* getbyid
-router.get("/getbyid/:districtId", async (req, res) => {
+//* get by id
+router.get("/:districtId", async (req, res) => {
   try {
     const district = await District.findById(req.params.districtId);
     res.status(200).send(district);
@@ -13,8 +13,8 @@ router.get("/getbyid/:districtId", async (req, res) => {
   }
 });
 
-//* getbyprovinceid
-router.get("/getbyprovinceid/:provinceId", async (req, res) => {
+//* get by province id
+router.get("/p/:provinceId", async (req, res) => {
   try {
     const districts = await District.find({
       provinceId: req.params.provinceId,

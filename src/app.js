@@ -14,9 +14,9 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // routers middleware
-app.use("/countries", countryRouter);
-app.use("/provinces", provinceRouter);
-app.use("/districts", districtRouter);
+app.use("/api/v1/countries", countryRouter);
+app.use("/api/v1/provinces", provinceRouter);
+app.use("/api/v1/districts", districtRouter);
 
 app.get("/", (req, res) => {
   res.status(200).send("----  Address Microservice  ----");
