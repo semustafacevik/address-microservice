@@ -46,3 +46,5 @@ mongoose.connect(
 app.listen(process.env.PORT || 4040, () => {
   console.log("App Started.");
 });
+
+module.exports = app;
